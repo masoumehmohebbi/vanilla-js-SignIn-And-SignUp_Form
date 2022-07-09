@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body onmouseup="getSelectedText();">
+    <div class="modal-container">
+      <div class="modal">
+        <p dir="rtl"></p>
+        <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: red;"></i>
+      </div>
+    </div>
+
+    <div id="contextMenu" style="display: none;">
+      <ul class="menu">
+          <li id="li-copy"><a href="#"><i class="fa fa-copy" aria-hidden="true"></i><span>کپی</span></a></li>
+          <!-- <li id="li-cut"><a href="#"><i class="fa fa-scissors" aria-hidden="true"></i><span>Cut</span></a></li> -->
+          <li id="li-paste"><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i><span>درج</span></a></li>
+          <li id="li-menu" style="position: relative;"><a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i><span>منو</span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              <ul class="menu-subMenu">
+                  <li class="item customMenu-signIn">
+                    <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>ورود / ثبت نام</a>
+                  </li>
+                  <!-- <li class="item customMenu-singOut">
+                    <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Up</a>
+                  </li> -->
+                </ul>
+          </li>
+          <li id="li-refresh" style="border-top: 1px solid rgba(122, 122, 124, 0.349);"><a href="#"><i class="fa fa-refresh" aria-hidden="true"></i>بارگذاری مجدد</a></li>
+          <li><a href="#"><i class="fa fa-times" aria-hidden="true"></i>بستن</a></li>
+      </ul>
+    </div>
+    
+    <section>
+      <div class="form sign-in">
+        <h1>ورود</h1>
+        <div class="social-container">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <p>یا با حساب خود وارد شوید</p>
+
+        <div class="placeholder-container">
+          <input type="email" placeholder="" id="signIn-email">
+          <span class="placeholder-span">ایمیل</span>
+
+          <i class="fa fa-dot-circle fa-2s red-dot" aria-hidden="true" style="display: none; font-size: small; top: 1rem; color: rgb(243, 86, 24); position:absolute; left:5px"></i>
+          <i class="fa fa-dot-circle fa-2s green-dot" aria-hidden="true" style="display: none; font-size: small; top: 1rem; color: rgb(6, 196, 6); position:absolute; left:5px"></i>
+        </div>
+
+        <div class="placeholder-container">
+          <input type="password" placeholder="">
+          <span class="placeholder-span">رمز عبور</span>
+          <span class="eyeIcons">
+            <i class="fa fa-eye fa-1" aria-hidden="true"></i>
+            <i class="fa fa-eye-slash fa-1" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <a href="#" dir="rtl" style="color: #f33744;">رمز عبور خود را فراموش کرده ام !</a>
+        <input type="button" value="ورود" id="sign-in-btn">
+      </div>
+
+      <div class="signup_pannel">
+        <div class="form sign-up">
+          <h1>ایجاد حساب کاربری</h1>
+          <div class="social-container">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+
+          <p>یا با ایمیل خود حساب ایجاد کنید</p>
+            
+          <div class="placeholder-container">
+            <input type="text" placeholder="">
+            <span class="placeholder-span">نام کاربری</span>
+          </div>
+            
+          <div class="placeholder-container">
+            <input id="signOut-email" type="email" placeholder="">
+            <span class="placeholder-span">ایمیل</span>
+            
+            <i class="fa fa-dot-circle fa-2s red-dot-sOut" aria-hidden="true" style="display: none; font-size: small; top: 1rem; color: rgb(243, 86, 24); position:absolute; left:5px"></i>
+            <i class="fa fa-dot-circle fa-2s green-dot-sOut" aria-hidden="true" style="display: none; font-size: small; top: 1rem; color: rgb(6, 196, 6); position:absolute; left:5px"></i>
+      
+          </div>
+
+          <div class="placeholder-container">
+            <input type="password" placeholder="">
+            <span class="placeholder-span">رمز ورود</span>
+            <span class="eyeIcons">
+              <i class="fa fa-eye fa-1" aria-hidden="true"></i>
+              <i class="fa fa-eye-slash fa-1" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="placeholder-container">
+            <input class="confirmPass-input" type="password" placeholder="">
+            <span class="placeholder-span">تکرار رمز عبور</span>
+            <span class="eyeIcons">
+              <i class="fa fa-eye fa-1" aria-hidden="true"></i>
+              <i class="fa fa-eye-slash fa-1" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <input type="button" value="ثبت نام" id="sign-out-btn">
+        </div>
+
+        <div class="pannel">
+          <div class="pannelTexts">
+            <div class="pannelText-signUp" dir="rtl">
+              <h1>خوش آمدید</h1>
+              <p>برای برقراری ارتباط با ما، لطفا حساب کاربری خود را ایجاد کنید.</p>
+            </div>
+            <div class="pannelText-SignIn" dir="rtl">
+              <h1>حساب کاربری دارید؟</h1>
+              <p>اگر قبلا ثبت نام کرده اید، با زدن روی دکمه ی ورود، وارد حساب کاربری خود شوید.</p>
+            </div>
+          </div>
+
+          <div class="pannel-buttons">
+            <span class="signUpBtn-pannel">ثبت نام</span>
+            <span class= "signInBtn-pannel">ورود</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<script src="assets/js/script.js"></script>    
+<!-- <script src="assets/js/bootstrap.min.js"></script> -->
+</body>
+</html>
